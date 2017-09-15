@@ -1,0 +1,35 @@
+Project Hello World
+	1. Compile tidak error.
+	   Setelah dirun, localhost:8080/hello tidak dapat diakses.
+	   404 Not found.
+	2. Compile tidak error.
+	   Setelah dirun, localhost:8080/hello tetap muncul.
+	3. Compile tidak error.
+	   Setelah dirun, localhost:8080/hello tidak muncul karena template tidak ada
+	   atau tidak aksesibel.  
+	   
+	String yang direturn menandakan nama file yang ada di templates. Apabila
+	tidak ada file di dalam folder template dengan nama yang ditulis di dalam 
+	return, maka akan terjadi error di nomor 3.
+
+Latihan Request Parameter
+	1. Compile tidak error, dan muncul sama seperti localhost:8080/greeting?name=chanek
+	2. Saat mengakses localhost:8080/greeting, hasilnya error karena parameter 'name' tidak ada.
+	   Setelah mengubah, hasilnya menjadi "Selamat datang null!" Sepertinya ini akibat
+	   parameter name tidak diassign, sehingga diassignkan null secara otomatis.
+	3. Saat akses localhost:8080/greeting, parameter name akan diganti dengan defaultValue yang diset di dalam method greeting.
+	   hasilnya menjadi "Selamat datang dunia!"
+	4. karena ada th:text="'Selamat datang ' + ${name} + '!'" yang mengoverride text html yang kita tuliskan. Saat dihilangkan, 
+       text "sapaan untuk user" muncul. Bila ingin memunculkan, tinggal tambahkan tag <p> baru dibawah dengan
+       isian text "sapaan untuk user".
+
+Latihan Path Variable
+	Hasil dari akses localhost:8080/greeting/chanek adalah "Selamat datang chanek!"
+	1. localhost:8080/greeting/ menghasilkan "Selamat datang dunia!", karena mengakses 
+	   controller dengan request mapping "/gedung". Saat mengubah method greetingPath,
+	   saat akses localhost:8080/greeting menghasilkan error, karena ada dua method yang menerima mapping "/greeting", yaitu 
+	   public Static greeting() dan greetingPath().
+	   localhost:8080/greeting/chanek menghasilkan "Selamat datang chanek", dan mengambil request mapping dari greetingPath().
+	   Apabila kita coba menghilangkan/mengcommand fungsi greeting(), maka localhost:8080/greeting akan menghasilkan "Selamat datang dengklek!"
+	   
+	
