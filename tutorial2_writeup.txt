@@ -3,7 +3,8 @@ Project Hello World
 	   Setelah dirun, localhost:8080/hello tidak dapat diakses.
 	   404 Not found.
 	2. Compile tidak error.
-	   Setelah dirun, localhost:8080/hello tetap muncul.
+	   Setelah dirun, localhost:8080/hello tetap muncul. Karena tidak peduli apa nama functionnya, RequestMapping akan tetap
+	   memanggil method yang ada tepat dibawahnya.
 	3. Compile tidak error.
 	   Setelah dirun, localhost:8080/hello tidak muncul karena template tidak ada
 	   atau tidak aksesibel.  
@@ -32,4 +33,8 @@ Latihan Path Variable
 	   localhost:8080/greeting/chanek menghasilkan "Selamat datang chanek", dan mengambil request mapping dari greetingPath().
 	   Apabila kita coba menghilangkan/mengcommand fungsi greeting(), maka localhost:8080/greeting akan menghasilkan "Selamat datang dengklek!"
 	   
+Lesson Learned dari Tutorial 2:
+	Kita dapat mengassign segala jenis variabel (String, Integer, dll)ke dalam requestValue. 
+	Jangan lupa untuk set variabel ke dalam model (model.addAttribute(args)).
+	Kita dapat melakukan perkalian di dalam template.
 	

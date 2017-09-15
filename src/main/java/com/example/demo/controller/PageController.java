@@ -34,8 +34,8 @@ public class PageController {
 	}
 	
 	@RequestMapping("/perkalian")
-	public String perkalian(@RequestParam(required = false) Integer a, 
-							@RequestParam(required = false) Integer b, 
+	public String perkalian(@RequestParam(value = "a", required = false) Integer a, 
+							@RequestParam(value = "b",required = false) Integer b, 
 							Model model) {
 		if(a == null && b == null) {
 			a = 0;
